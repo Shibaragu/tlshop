@@ -625,7 +625,7 @@
         </dependency>
     </dependencies>
 
-    <repositories>
+    <!--<repositories>
         <repository>
             <id>nexus</id>
             <name>maven-public</name>
@@ -633,14 +633,14 @@
             <releases>
                 <enabled>true</enabled>
             </releases>
-            <!-- 此项配置，用于打包时依赖最新时间戳的快照版本 -->
+            &lt;!&ndash; 此项配置，用于打包时依赖最新时间戳的快照版本 &ndash;&gt;
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
                 <checksumPolicy>warn</checksumPolicy>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories>-->
     <!-- <distributionManagement>
             <snapshotRepository>
              <id>maven-repository-snapshots</id>

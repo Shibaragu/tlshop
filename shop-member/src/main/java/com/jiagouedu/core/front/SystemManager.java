@@ -28,9 +28,9 @@ public class SystemManager {
 
     @PostConstruct
     public void afterPropertiesSet(){
-        instance = this;
-    }
-	/**
+     instance = this;
+     }
+     /**
 	 * 商品目录，树形结构
 	 */
 //	private List<Catalog> catalogs = new LinkedList<Catalog>();//产品目录列表
