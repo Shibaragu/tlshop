@@ -1,0 +1,1 @@
+package com.jiagouedu.services.manage.catalog;import com.jiagouedu.services.manage.catalog.bean.FrontCatalog;import java.util.List;/** * 加载商品分类信息,主要应用于缓存 */public interface FrontCatalogService {    public List selectList(FrontCatalog e);}

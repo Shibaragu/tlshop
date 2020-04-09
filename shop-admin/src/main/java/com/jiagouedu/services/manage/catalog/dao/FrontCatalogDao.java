@@ -1,0 +1,1 @@
+package com.jiagouedu.services.manage.catalog.dao;import com.jiagouedu.core.DaoManager;import com.jiagouedu.services.manage.catalog.bean.FrontCatalog;import java.util.List;public interface FrontCatalogDao  {//extends DaoManager<FrontCatalog>    public List selectList(FrontCatalog e);}

@@ -1,0 +1,1 @@
+package com.jiagouedu.services.manage.attribute;import com.jiagouedu.core.Services;import com.jiagouedu.services.manage.attribute.bean.Attribute;import java.util.List;public interface AttributeService extends Services<Attribute> {	List<Attribute>  selectListToCache(Attribute e);	int selectCount(Attribute ee);}
