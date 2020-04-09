@@ -128,7 +128,7 @@
         <pinyin4j.version>2.5.0</pinyin4j.version>
         <lucene.version>3.3.0</lucene.version>
 
-        <c3p0.version>0.9.5</c3p0.version>
+        <c3p0.version>0.9.5.4</c3p0.version>
         <aliyun-openservices.version>1.0.12</aliyun-openservices.version>
         <druid.version>0.2.3</druid.version>
 
