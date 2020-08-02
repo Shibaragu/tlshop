@@ -15,16 +15,15 @@
     <!-- 启用注解驱动 -->
     <mvc:annotation-driven conversion-service="conversionService">
         <!-- 字符串转换器 -->
-        <mvc:message-converters register-defaults="true">
+       <mvc:message-converters register-defaults="true">
             <bean id="messageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
                 <constructor-arg value="UTF-8" />
             </bean>
             <bean id="jsonHttpMesaageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
         </mvc:message-converters>
         <!-- 集合参数解析器 -->
-        <!-- <mvc:argument-resolvers>
-        	<bean class="com.jiagouedu.config.UserArgumentResolver"/>  
-        </mvc:argument-resolvers> -->
+        <!--<mvc:argument-resolvers>-->
+        <!--</mvc:argument-resolvers>-->
     </mvc:annotation-driven>
     <!-- 配置静态文件路径 -->
     <!-- max caching age: 24 h -->
@@ -98,5 +97,9 @@
     <!--<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />-->
     <!-- 配置上传文件所需的解析器 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
-    
+
+    <!--  swagger静态文件路径 -->
+    <!--<mvc:resources mapping="/swagger/**" location="/WEB-INF/swagger/" cache-period="31556926"/>-->
+
+ <!--   <bean class="com.jiagouedu.swagger.SwaggerConfig" />-->
 </beans>

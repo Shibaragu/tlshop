@@ -34,6 +34,19 @@ public class RedisCacheProvider implements CacheProvider {
             }
         });
     }
+    
+    public void put(final String key, final Serializable cacheObject, final long expire) {
+    	redisTemplate.execute(new RedisCallback<Serializable>() {
+    		@Override
+    		public Serializable doInRedis(RedisConnection connection) throws DataAccessException {
+    			RedisSerializer<Serializable> value = (RedisSerializer<Serializable>) redisTemplate.getValueSerializer();
+    			byte[] keyBytes = redisTemplate.getStringSerializer().serialize(key);
+    			connection.set(keyBytes, value.serialize(cacheObject));
+    			connection.expire(keyBytes, expire);
+    			return null;
+    		}
+    	});
+    }
 
     @Override
     public Serializable get(final String key) {

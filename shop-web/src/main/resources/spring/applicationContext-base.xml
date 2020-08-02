@@ -24,4 +24,5 @@
 		<!-- 线程池所使用的缓冲队列 -->
 		<property name="queueCapacity" value="100" />
 	</bean>
+	
 </beans>

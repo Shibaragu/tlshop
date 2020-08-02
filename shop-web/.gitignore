@@ -11,3 +11,4 @@ classes/
 build/
 spy.log
 .git/
+.externalToolBuilders

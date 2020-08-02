@@ -13,11 +13,6 @@
         <from>/product/([a-zA-Z]+).html</from>
         <to last="true">/product/$1</to>
     </rule>
-    
-    <rule>
-        <from>/product/miaosha/([a-zA-Z]+).html</from>
-        <to last="true">/product/miaosha/$1</to>
-    </rule>
 
     <!-- 购物车操作 -->
     <rule>

@@ -1,2 +1,9 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+${e.name}
+<br/>
+${e.price}
+<br/>
+${e.nowPrice}
+<br/>
+${e.stock}
+<br/>
 ${e.productHTML}

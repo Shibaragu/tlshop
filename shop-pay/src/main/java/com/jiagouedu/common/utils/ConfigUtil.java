@@ -23,7 +23,7 @@ public class ConfigUtil {
 	public  static String SIGN_TYPE;// 签名加密方式
 	public  static String CERT_PATH ;//微信支付证书
 	public  static String notifyurl ;//通知地址
-	public  static String IP="192.168.0.66" ;//通知地址
+	public  static String IP="192.168.0.0" ;//通知地址
 
 	public static synchronized void init(String filePath) {
 		if (configs != null) {

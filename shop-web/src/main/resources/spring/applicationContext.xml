@@ -17,6 +17,10 @@
     <import resource="classpath*:spring/applicationContext-base.xml"/>
     <import resource="classpath*:spring/applicationContext-cache.xml"/>
     <import resource="classpath*:spring/front/applicationContext-front.xml"/>
+    <import resource="classpath*:spring/application-session.xml"/>
+    <import resource="classpath*:spring/application-zookeeper.xml"/>
     <import resource="classpath*:dubbo/dubbo.xml"/>
-    
+
+
+
 </beans>

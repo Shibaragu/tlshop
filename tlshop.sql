@@ -7569,3 +7569,10 @@ CREATE TABLE `t_user` (
 INSERT INTO `t_user` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '2013-07-30 20:53:09', '2014-03-17 21:24:59', null, 'admin', 'y', '1', '超级管理员', null);
 INSERT INTO `t_user` VALUES ('8', 'select', 'e10adc3949ba59abbe56e057f20f883e', '2013-10-05 13:46:59', '2014-03-17 21:25:42', null, 'admin', 'n', '6', '查看权限', null);
 INSERT INTO `t_user` VALUES ('12', 'test1', 'e10adc3949ba59abbe56e057f20f883e', '2014-02-13 12:22:42', '2014-04-14 20:18:58', 'admin', null, 'y', '6', '测试账号', null);
+
+-- 秒杀功能字段变更
+ALTER TABLE `t_product`
+ADD COLUMN `miaosha`  char(1) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'n' COMMENT '秒杀标记' AFTER `sale`;
+ALTER TABLE `t_product`
+ADD COLUMN `miaoshaStartTime`  datetime NULL AFTER `miaosha`,
+ADD COLUMN `miaoshaEndTime`  datetime NULL AFTER `miaoshaStartTime`;

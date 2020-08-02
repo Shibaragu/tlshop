@@ -162,13 +162,43 @@
                         </select>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label class="col-md-2 control-label">送积分</label>
-                    <div class="col-md-10">
-                        <input type="text"  value="${e.score!""}" name="score" type="text"  id="score" maxlength="20" data-rule="销量;required;integer;score;"/>
+                
+				<div class="form-group col-md-6">
+					<label class="col-md-4 control-label">是否秒杀</label>
+                    <div class="col-md-8">
+						<#assign map = {'n':'否','y':'是'}>
+                        <select id="miaosha" name="miaosha" class="input-medium">
+							<#list map?keys as key>
+                                <option value="${key}" <#if e.miaosha?? && e.miaosha==key>selected="selected" </#if>>${map[key]}</option>
+							</#list>
+                        </select>
                     </div>
                 </div>
+                
+                <div class="form-group col-md-6">
+					<label class="col-md-4 control-label">秒杀开始时间</label>
+                    <div class="col-md-8">
+						<input id="miaoshaStartTime" class="Wdate search-query " type="text" name="miaoshaStartTime"
+						value="${e.miaoshaStartTime!""}" 
+						onFocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'miaoshaEndTime\')||\'2020-10-01\'}'})"/>
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-6">
+					<label class="col-md-4 control-label">秒杀结束时间</label>
+                    <div class="col-md-8">
+						<input id="miaoshaEndTime" class="Wdate search-query " type="text" name="miaoshaEndTime"
+						value="${e.miaoshaEndTime!""}" 
+						onFocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'miaoshaStartTime\')}',maxDate:'2020-10-01'})"/>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">送积分</label>
+                    <div class="col-md-2"><input type="text"  value="${e.score!""}" name="score" type="text"  id="score" maxlength="20" data-rule="销量;required;integer;score;"/>
+                    </div>
+                </div>
+                
                 <div class="form-group">
                     <label class="col-md-2 control-label">页面标题</label>
                     <div class="col-md-10">

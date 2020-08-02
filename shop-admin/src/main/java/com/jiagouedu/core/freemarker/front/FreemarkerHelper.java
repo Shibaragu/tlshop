@@ -249,7 +249,8 @@ public class FreemarkerHelper {
 		HashMap<String, Object> data = new HashMap<String, Object>();
 		data.clear();
 		data.put("e", p);
-		String templateHtml = RequestHolder.getSession().getServletContext().getRealPath("/")+"/jsp/product/"+p.getId()+".jsp";
+		//String templateHtml = RequestHolder.getSession().getServletContext().getRealPath("/")+"/jsp/product/"+p.getId()+".jsp";
+		String templateHtml = "d:/"+p.getId()+".html";
 		crateHTML(RequestHolder.getSession().getServletContext(), data, template_product,templateHtml);
 		logger.error("生成html页面成功！id="+p.getId());
 

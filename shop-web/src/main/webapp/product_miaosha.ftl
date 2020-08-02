@@ -715,6 +715,28 @@ function doMiaosha(token){
 	});
 }
 
+//old秒杀
+function doOldMiaosha(){
+	$.ajax({
+		url:"${basepath}/miaosha/confirm",
+		type:"POST",
+		data:{
+			productId:$("#productId").val(),
+		},
+		success:function(data){
+			if(data.code == 0){
+				//window.location.href="${basepath}/paygate/pay?orderId="+data.data.id + "&orderPayId="+data.data.orderpayID;
+				getMiaoshaResult($("#productId").val());
+			}else{
+				layer.msg(data.msg);
+			}
+		},
+		error:function(){
+			layer.msg("客户端请求有误");
+		}
+	});
+}
+
 function getMiaoshaResult(productId){
 	g_showLoading();
 	$.ajax({

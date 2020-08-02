@@ -135,7 +135,7 @@
 										<a href="${basepath}/account/editAddress?id=${item.id!""}">
 											修改
 										</a>|
-										<a onclick="return deletes();" href="${basepath}/account/deleteAddress?id=${item.id!""}&isdefault=${item.isdefault!""}">
+										<a onclick="return deletes();" href="${basepath}/account/deleteAddress?id=${item.id!""}">
 											删除
 										</a>
 									</td>

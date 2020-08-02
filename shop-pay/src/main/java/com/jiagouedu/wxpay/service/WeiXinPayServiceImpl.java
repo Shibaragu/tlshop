@@ -72,13 +72,16 @@ public class WeiXinPayServiceImpl implements IWeiXinPayService{
             }else{
                String errCodeDes = (String) map.get("err_code_des");
                logger.info("订单号：{}生成微信支付码(系统)失败:{}",product.getOutTradeNo(),errCodeDes);
+              // message = Constants.FAIL;
             }
          }else{
             String returnMsg = (String) map.get("return_msg");
             logger.info("(订单号：{}生成微信支付码(通信)失败:{}",product.getOutTradeNo(),returnMsg);
+           // message = Constants.FAIL;
          }
       } catch (Exception e) {
          logger.error("订单号：{}生成微信支付码失败(系统异常))",product.getOutTradeNo(),e);
+         //message = Constants.FAIL;
       }
       return urlCode;
    }

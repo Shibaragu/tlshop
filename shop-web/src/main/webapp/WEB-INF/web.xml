@@ -67,6 +67,20 @@
         <url-pattern>/ValidateImage.do</url-pattern>
     </servlet-mapping>
 
+	  <!--DelegatingFilterProxy将查找一个Bean的名字 springSessionRepositoryFilter丢给一个过滤器。为每个请求
+	  	调用DelegatingFilterProxy, SessionRepositoryFilter将被调用-->
+	  <filter>
+	    <filter-name>springSessionRepositoryFilter</filter-name>
+	    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	  </filter>
+	
+	
+	  <filter-mapping>
+	    <filter-name>springSessionRepositoryFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	  </filter-mapping>
+	
+
     <filter>
         <filter-name>Set Character Encoding</filter-name>
         <filter-class>
@@ -97,8 +111,15 @@
         <filter-name>UrlRewriteFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
-
+    <servlet>
+        <servlet-name>springdyn</servlet-name>
+        <servlet-class>com.gome.spring.compents.servlet.DynServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springdyn</servlet-name>
+        <url-pattern>/dyn/admin/*</url-pattern>
+    </servlet-mapping>
 
     <error-page>
         <error-code>404</error-code>
@@ -133,15 +154,4 @@
     <listener>
         <listener-class>com.jiagouedu.core.listener.SystemListener</listener-class>
     </listener>
-
-    <servlet>
-        <servlet-name>springdyn</servlet-name>
-        <servlet-class>com.gome.spring.compents.servlet.DynServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>springdyn</servlet-name>
-        <url-pattern>/dyn/admin/*</url-pattern>
-    </servlet-mapping>
-
-
 </web-app>

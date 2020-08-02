@@ -47,7 +47,7 @@
 		<appender-ref ref="async-error-file"/>
 	</root>
 
-    <logger name="com.jiagouedu" level="info" additivity="false">
+    <logger name="com.jiagouedu" level="debug" additivity="false">
 		<appender-ref ref="async-debug-file" />
 	</logger>
 

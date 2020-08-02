@@ -13,12 +13,12 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>com.jiagouedu</groupId>
-            <artifactId>shop-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
+       <dependency>
+               <groupId>com.jiagouedu</groupId>
+               <artifactId>shop-common</artifactId>
+               <version>1.0-SNAPSHOT</version>
+       </dependency>
+      <dependency>
             <groupId>com.jiagouedu</groupId>
             <artifactId>shop-member-client</artifactId>
             <version>1.0-SNAPSHOT</version>
@@ -48,11 +48,11 @@
             <artifactId>core</artifactId>
             <version>2.1</version>
         </dependency>
-        <dependency>
+     <dependency>
             <groupId>com.gome.spring.compents</groupId>
             <artifactId>dynamo</artifactId>
-            <scope>system</scope>
-            <systemPath>${basedir}\..\dynamo.jar</systemPath>
+           <scope>system</scope>
+           <systemPath>${basedir}\..\dynamo.jar</systemPath>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -65,7 +65,23 @@
             <artifactId>spring-session-data-redis</artifactId>
             <version>1.3.1.RELEASE</version>
         </dependency>
-
+        
+        <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.atomikos</groupId>
+		    <artifactId>transactions-jdbc</artifactId>
+		    <version>4.0.6</version>
+		</dependency>
+		<dependency>
+            <groupId>com.jiagouedu</groupId>
+            <artifactId>shop-message-client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -90,41 +106,26 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- <plugin>
-                 <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-compiler-plugin</artifactId>
-                 <version>2.3.2</version>
-                 <configuration>
-                     <source>1.7</source>
-                     <target>1.7</target>
-                     <encoding>utf8</encoding>
-                     <compilerArgument>-XDignore.symbol.file=true -Xlint</compilerArgument>
-                     <testCompilerArgument>-XDignore.symbol.file=true -Xlint</testCompilerArgument>
-                 </configuration>
-             </plugin>-->
-            <!-- <plugin>
-                 <groupId>org.apache.tomcat.maven</groupId>
-                 <artifactId>tomcat7-maven-plugin</artifactId>
-                 <version>2.1</version>
-                 <configuration>
-                     <port>8080</port>
-                 </configuration>
-             </plugin>
-             <plugin>
-                 <groupId>org.apache.tomcat.maven</groupId>
-                 <artifactId>tomcat6-maven-plugin</artifactId>
-                 <version>2.1</version>
-                 <configuration>
-                     <port>8080</port>
-                 </configuration>
-                 <dependencies>
-                     <dependency>
-                         <groupId>javax.servlet</groupId>
-                         <artifactId>javax.servlet-api</artifactId>
-                         <version>3.1.0</version>
-                     </dependency>
-                 </dependencies>
-             </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>utf8</encoding>
+                    <compilerArgument>-XDignore.symbol.file=true -Xlint</compilerArgument>
+                    <testCompilerArgument>-XDignore.symbol.file=true -Xlint</testCompilerArgument>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <port>8082</port>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>

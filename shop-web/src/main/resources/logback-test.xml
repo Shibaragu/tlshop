@@ -7,12 +7,12 @@
 		</layout>
 	</appender>
 
-    <logger name="com.jiagouedu" level="error"/>
+    <logger name="com.jiagouedu" level="DEBUG"/>
     <!--<logger name="java.sql.Connection" level="DEBUG"/>-->
     <!--<logger name="java.sql.PreparedStatement" level="DEBUG"/>-->
 	<!--<logger name="org.springframework.ui.freemarker" level="DEBUG" />-->
 
-	<root level="error">
+	<root level="INFO">
 		<appender-ref ref="stdout" />
 	</root>
 

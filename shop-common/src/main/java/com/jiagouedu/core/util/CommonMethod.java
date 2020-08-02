@@ -14,9 +14,9 @@ public class CommonMethod {
 
 	public static String getMiaoshaTokenRedisKey(String accountId, String productId) {
 		return RedisKeyPrefix.MIAOSHA_ORDER_TOKEN + "_" + accountId + "_" + productId;
-	}
+	}//miaosha_order_token_180_10270
 	
 	public static String getMiaoshaVerifyCodeRedisKey(String accountId, String productId) {
 		return RedisKeyPrefix.MIAOSHA_VERIFY_CODE + "_" + accountId + "_" + productId;
-	}
+	}//miaosha_verify_code_180_10270
 }

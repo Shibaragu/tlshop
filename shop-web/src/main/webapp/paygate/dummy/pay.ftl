@@ -15,7 +15,7 @@
 <table class="table">
     <tr>
         <td>订单号:</td>
-        <td>${payInfo.WIDout_trade_no!""}</td>
+        <td>${order.WIDout_trade_no!""}</td>
     </tr>
     <tr>
         <td>商品名称 :</td>
@@ -23,7 +23,7 @@
     </tr>
     <tr>
         <td>金额:</td>
-        <td>${payInfo.WIDprice!""}</td>
+        <td>${payInfo.amount!""}</td>
     </tr>
     <tr>
         <td>配送费:</td>

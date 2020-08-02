@@ -47,7 +47,6 @@ import com.jiagouedu.services.manage.activity.bean.Activity;
 
 import com.jiagouedu.services.manage.hotquery.HotqueryService;
 import com.jiagouedu.services.manage.hotquery.bean.Hotquery;
-import com.jiagouedu.services.manage.systemsetting.SystemSettingMService;
 import com.jiagouedu.services.manage.systemsetting.bean.SystemSetting;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
@@ -78,7 +77,7 @@ public class FrontCache {
 	private SystemSettingService systemSettingService;
 
 	@Autowired
-	private SystemSettingMService systemSettingMService;
+	private com.jiagouedu.services.manage.systemsetting.SystemSettingService systemSettingMService;
 
     @Autowired
 	private NewsService newsService;
@@ -90,8 +89,8 @@ public class FrontCache {
 	private NavigationService navigationService;
     @Autowired
 	private AttributeService attributeService;
-//    @Autowired
-//	private PayService payService;
+    @Autowired
+	private PayService payService;
     @Autowired
 	private CommentTypeService commentTypeService;
     @Autowired
@@ -109,8 +108,8 @@ public class FrontCache {
 	private CommentService commentService;
     @Autowired
 	private AccountRankService accountRankService;
-//    @Autowired
-//	private ActivityService activityService;
+    @Autowired
+	private ActivityService activityService;
     @Autowired
 	private HotqueryService hotqueryService;
 
@@ -135,13 +134,13 @@ public class FrontCache {
 		this.hotqueryService = hotqueryService;
 	}
 
-//	public ActivityService getActivityService() {
-//		return activityService;
-//	}
+	public ActivityService getActivityService() {
+		return activityService;
+	}
 
-//	public void setActivityService(ActivityService activityService) {
-//		this.activityService = activityService;
-//	}
+	public void setActivityService(ActivityService activityService) {
+		this.activityService = activityService;
+	}
 
 	public AccountRankService getAccountRankService() {
 		return accountRankService;
@@ -175,9 +174,9 @@ public class FrontCache {
 		this.areaService = areaService;
 	}
 
-//	public void setPayService(PayService payService) {
-//		this.payService = payService;
-//	}
+	public void setPayService(PayService payService) {
+		this.payService = payService;
+	}
 
 	public void setCommentTypeService(CommentTypeService commentTypeService) {
 		this.commentTypeService = commentTypeService;
@@ -232,13 +231,13 @@ public class FrontCache {
 		/**
 		 * 加载支付宝配置
 		 */
-		/*Pay pay = new Pay();
+		Pay pay = new Pay();
 		pay.setCode(Pay.pay_code_alipayescow);
 		pay = payService.selectOne(pay);
 		systemManager.setAlipayConfig(pay.getSeller());
 
 		AlipayConfig.partner = pay.getPartner();
-		AlipayConfig.key = pay.getKey1();*/
+		AlipayConfig.key = pay.getKey1();
 
 //		logger.error("SystemManager.alipayConfig="+SystemManager.alipayConfig);
 
@@ -732,8 +731,8 @@ public class FrontCache {
 			p.setIsnew(Product.Product_isnew_y);//最新
 		} else if (type == 2) {
 			p.setSale(Product.Product_sale_y);//特价
-		} else if (type == 3) {//热门
-			p.setHot(true);
+		} else if (type == 3) {
+			p.setHot(true);//热门
 		} else if(type == 4) {//秒杀
 			p.setMiaosha(Product.Product_miaosha_y); ;
 		}
@@ -1160,8 +1159,7 @@ public class FrontCache {
 	 */
 	public void loadActivityMap(){
         Map<String, Activity> activityMap = Maps.newHashMap();
-//		List<Activity> list = activityService.selectList(new Activity());
-		List<Activity> list = new ArrayList<>();
+		List<Activity> list = activityService.selectList(new Activity());
 		if(list!=null){
 			for(int i=0;i<list.size();i++){
 				Activity activity = list.get(i);
@@ -1195,7 +1193,6 @@ public class FrontCache {
 	 */
 	public void loadAllCache() throws Exception {
 		logger.info("loadAllCache...");
-		System.out.println("==========加载全部的缓存数据=================");
 		loadHotquery();
 		loadCatalogs(true);
 		loadIndexLeftProduct();

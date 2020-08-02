@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * @author wukong 图灵学院 QQ:245553999
  * @date 16/2/18 22:58
- * Email: dinguangx@163.com
  */
 @Controller("frontPaygateAction")
 @RequestMapping("paygate")
@@ -35,7 +34,7 @@ public class PaygateAction {
     @RequestMapping("pay")
     public String pay(String orderId, String orderPayId,  ModelMap modelMap) {
         Order order = orderService.selectById(orderId);
-//        Order order = null;
+
         if(order == null) {
             throw new NullPointerException("根据订单号查询不到订单信息！");
         }
@@ -46,19 +45,20 @@ public class PaygateAction {
         }
         Orderpay orderpay = orderpayService.selectById(orderPayId);
         if(orderpay==null){
-            throw new NullPointerException("根据订单号查询不到待支付信息！");
+            throw new NullPointerException("根据订单号查询不到配送信息！");
         }
         order.setOrderpayID(orderPayId);
         PayInfo payInfo = createPayInfo(order,ordership);
 //        RequestHolder.getRequest().setAttribute("payInfo", payInfo);
         modelMap.addAttribute("payInfo", payInfo);
+        modelMap.addAttribute("order", order);
 
         ///使用的网关
         String paygateType = systemManager.getProperty("paygate.type");
         if("dummy".equalsIgnoreCase(paygateType)) {
-            return "paygate/dummy/pay";
+            return "paygate/dummy/choicepay";
         }
-        return "paygate/alipay/alipayapi";
+        return "paygate/dummy/choicepay";
     }
     /**
      * 创建支付宝的付款信息对象

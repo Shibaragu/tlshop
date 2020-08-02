@@ -59,12 +59,12 @@ public class IdTest {
 
    @Test
    public void getId3(){
-      BitUtil.timeTasks(100, 100, new Runnable() {
-         @Override
-         public void run() {
-            System.out.println("insert into bit_table values('"+redisService.generator()+"');");;
-         }
-      });
+//      BitUtil.timeTasks(100, 100, new Runnable() {
+//         @Override
+//         public void run() {
+//            System.out.println("insert into bit_table values('"+redisService.generator()+"');");;
+//         }
+//      });
 
    }
 

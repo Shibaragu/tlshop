@@ -1,17 +1,20 @@
 package com.jiagouedu.core.cache;
 
-import com.alibaba.fastjson.JSON;
-import com.jiagouedu.core.util.SpringContextHolder;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-import org.apache.log4j.Logger;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import org.apache.log4j.Logger;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+
+import com.alibaba.fastjson.JSON;
+import com.jiagouedu.core.util.SpringContextHolder;
 
 public class RedisUtil {
 
@@ -136,6 +139,27 @@ public class RedisUtil {
                 jedis.set(key, value);
             }
             return true;
+        } catch (Exception e) {
+            log.error("Redis缓存设置key值 出错！", e);
+            return false;
+        } finally {
+            returnResource(jedis);
+        }
+    }
+    
+    public static boolean set(String key, String value, String nxxx, String expx, long time) {
+        Jedis jedis = null;
+        try {
+            jedis = getJedis();
+            String result = "";
+            if(jedis != null){
+            	result = jedis.set(key, value, nxxx, expx, time);
+                
+            }
+            if ("OK".equals(result)) {
+				return true;
+			}
+            return false;
         } catch (Exception e) {
             log.error("Redis缓存设置key值 出错！", e);
             return false;
