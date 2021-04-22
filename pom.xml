@@ -111,7 +111,7 @@
         <jackson.version>1.9.13</jackson.version>
         <freemarker.version>2.3.16</freemarker.version>
         <!--<ognl.version>3.0.6</ognl.version>-->
-        <mybatis.version>3.0.6</mybatis.version>
+        <mybatis.version>3.5.6</mybatis.version>
         <mybatis-spring.version>1.0.0-RC3</mybatis-spring.version>
         <spring-data-redis.version>1.4.2.RELEASE</spring-data-redis.version>
         <jedis.version>2.6.0</jedis.version>
