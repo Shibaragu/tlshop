@@ -150,7 +150,7 @@
         <htmlparser.version>2.1</htmlparser.version>
         <!--<httpclient.version>4.1.3</httpclient.version>-->
         <!--<httpcore.version>4.1.4</httpcore.version>-->
-        <httpclient.version>4.2</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <jaxen.version>1.1.1</jaxen.version>
 
         <activation.version>1.1</activation.version>
